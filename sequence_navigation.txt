@@ -1,0 +1,24 @@
+1) Démarrage de l'appli
+-> Affichage de la HomeView
+  (Proposition de deux bouton 1-Scannez le QrCode, 2-Promotions actuelles)
+
+2)Appuie sur le bouton 1
+-> Affichage de la ScanView
+-> Lancement de la camera
+ -> Recherche de la detection pour le QrCode
+  -> Si QrCode détécté renvoit d'une clef id en backend
+   -> Clef associée a une code de reduction dans la BDD (DONC gestion de bdd)
+    -> Affichage puis renvoie du code de reduction sur une vue CodePromoView
+
+3)Appuie sur le bouton 2
+-> Affichage de la ActuallyPromoView
+ ->Recherche en bdd des elements mit en promotion
+  -> Affichage sur la view par item (nom, type, prix promo + prix brut)
+   (Possibilité de scroll si il y a plus de ~5 items)
+
+4)Appuie sur le bouton retour
+ Retour de ScanView -> HomeView
+ Retour de ActuallyPromoView -> HoweView
+ Retour de CodePromoView -> ScanView
+
+
