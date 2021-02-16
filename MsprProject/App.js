@@ -1,13 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
+
+import TestIndex from "./src/Components/TestIndex";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app! BERIZ</Text>
-      <StatusBar style="auto" />
-    </View>
+    <TestIndex/>
   );
 }
 
