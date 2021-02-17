@@ -6,9 +6,7 @@ import Root from "./Root";
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <Root />
+      <Root/>
     </NavigationContainer>
-    
   );
 }
-
