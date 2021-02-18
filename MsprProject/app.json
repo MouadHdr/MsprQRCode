@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MsprProject",
-    "slug": "MsprProject",
+    "name": "testNavigation",
+    "slug": "testNavigation",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
