@@ -1,20 +1,10 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  Button,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-  View,
-  SafeAreaView,
-} from "react-native";
-
+import { Text, SafeAreaView } from "react-native";
 
 export default function CurrentPromoView() {
   return (
     <SafeAreaView>
-      <Text>prooooooooomooooooos</Text>
+      <Text>PAGE PROMO !!</Text>
     </SafeAreaView>
   );
 }

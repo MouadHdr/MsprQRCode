@@ -1,33 +1,24 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  Button,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-  View,
-} from "react-native";
-import {useNavigation} from '@react-navigation/native';
-
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 export default function ButtonInputScan() {
-const navigation = useNavigation();
+
+  const navigation = useNavigation();
+  const goToCurrentPromoView = () => navigation.navigate("CurrentPromoView");
+  
   return (
-            <TouchableOpacity
-              title="go Details"
-              onPress={() => navigation.navigate("CurrentPromo")}
-            >
-              <View style={styles.button}>
-                <Text style={styles.buttonText}>Bons plans</Text>
-                <View style={styles.containerImg}>
-                  <Image
-                    style={styles.imgButton}
-                    source={require("../assets/logoReduction.png")}
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
+    <TouchableOpacity onPress={goToCurrentPromoView}>         
+      <View style={styles.button}>
+        <Text style={styles.buttonText}>Bons plans</Text>
+        <View style={styles.containerImg}>
+          <Image
+            style={styles.imgButton}
+            source={require("../assets/logoReduction.png")}
+          />
+        </View>
+      </View>
+    </TouchableOpacity>
   );
 }
 

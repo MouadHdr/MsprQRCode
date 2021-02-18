@@ -1,24 +1,14 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  Button,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-  View,
-} from "react-native";
-import ButtonInputScan from "../components/ButtonInputScan";
+import { Image, StyleSheet, Text, View } from "react-native";
+
+import ButtonScan from "../components/ButtonScan";
 import ButtonCurrentPromo from "../components/ButtonCurrentPromo";
 
 export default function HomeView() {
   return (
     <View style={styles.wrapper} className="wrapper">
       <View className="container">
-        <View
-          style={styles.containerLogoGoStyle}
-          className="container-logoGoStyle"
-        >
+        <View style={styles.containerLogoGoStyle} className="container-logoGoStyle">
           <Image
             style={styles.logoGoStyle}
             source={require("../assets/logo_gostyle.png")}
@@ -27,13 +17,14 @@ export default function HomeView() {
 
         <View style={styles.ButtonsInput} className="container-buttons">
           <View style={styles.buttonItem1} className="item-button">
-            <ButtonInputScan />
+            <ButtonScan />
           </View>
           <View style={styles.buttonItem2} className="item-button">
             <ButtonCurrentPromo />
           </View>
         </View>
       </View>
+      
       <Text style={styles.footer}>
         Copyright 2020-2021 EPSI, Hammouti, Hadirasso. 
       </Text>
