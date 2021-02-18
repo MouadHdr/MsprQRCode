@@ -1,3 +1,4 @@
+
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
@@ -7,7 +8,7 @@ export default function ({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Home screen</Text>
-      <Button onPress={goTo} title={`Go to TESTPAGE`} />
+      <Button onPress={goTo} title={`Go Details`} />
     </View>
   );
 }

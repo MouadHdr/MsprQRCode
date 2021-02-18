@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-import TestHome from "./src/Pages/TestHome";
+import Navigation from "./Components/Navigation";
 
 export default function App() {
     return (
-        <TestHome/>
+        <Navigation/>
     )
 }
