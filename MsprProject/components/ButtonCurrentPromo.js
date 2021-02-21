@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     },
     containerImg:{
       backgroundColor:"white",
-      color:"#fff",
       width: 77,
       height: 77,
       borderRadius:60,
