@@ -5,6 +5,8 @@ export default function CurrentPromoView() {
   return (
     <SafeAreaView>
       <Text>PAGE PROMO !!</Text>
+
+      
     </SafeAreaView>
   );
 }
