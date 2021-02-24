@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, SafeAreaView } from "react-native";
-import ButtonGoBack from '../components/ButtonGoBack'
+import ButtonGoBack from '../Components/ButtonGoBack'
 
 export default function CurrentPromoView() {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-import ButtonScan from "../components/ButtonScan";
-import ButtonCurrentPromo from "../components/ButtonCurrentPromo";
+import ButtonScan from "../Components/ButtonScan";
+import ButtonCurrentPromo from "../Components/ButtonCurrentPromo";
 
 export default function HomeView() {
   return (

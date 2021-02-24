@@ -3,7 +3,7 @@ import { Image, Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import { Dimensions } from "react-native";
 
-import ButtonGoBack from '../components/ButtonGoBack'
+import ButtonGoBack from '../Components/ButtonGoBack'
 
 const { width, height } = Dimensions.get("window");
 
@@ -36,14 +36,17 @@ export default function ScanView() {
     <View style={ { flex: 1, flexDirection: "column", justifyContent: "flex-end" } }>
 
         {/* LOGO GOSTYLE */}
+
     <View style={styles.containerButtonGoBack} > 
         <View style={styles.ButtonGoBack}>
             <ButtonGoBack />
         </View>
     </View>
+
     <View style={styles.containerContouring}>
       <Image style={styles.contouring} source={require("../assets/contouring.png")} />
     </View>
+
     <BarCodeScanner onBarCodeScanned={ scanned ? undefined : handleBarCodeScanned } style={[ StyleSheet.absoluteFillObject, styles.container] }>
       <View style={styles.layerTop} />
 
@@ -93,20 +96,18 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    
+    zIndex: 10,
   },
 
   contouring: {
     flex:1,
     alignItems: 'center',
     justifyContent: 'center',
-    
     zIndex: 10,
     width: width,
     height: height,
-    top: 25,
+    top: 20,
     position: 'absolute',
-    
   },
 
   containerLogoGoStyle: {
@@ -150,29 +151,20 @@ const styles = StyleSheet.create({
     flex: 2,
     backgroundColor: opacity
   },
-  // borderVector: {
-  //   flex: 3,
-  //   position: "absolute",
-  //   width: "87%",
-  //   height: "72%",
-  //   borderWidth: 15,
-  //   borderColor: "#fff",
-  //   borderRadius: 25,
-  // },
 
   containerButton: {
-    zIndex: 1000,
+    zIndex: 10000,
     alignItems: "center",
     justifyContent: "center",
     position: 'absolute',
-    left:"42%",
+    left:"40%",
     right: "40%",
-    top: "89%",
+    bottom: "-5%",
+
   },
 
   button: {
-    zIndex: 9999,
-    zIndex: 30,
+    zIndex: 10000,
     borderRadius: 60,
     height: 86,
     width: 87,
@@ -208,10 +200,10 @@ const styles = StyleSheet.create({
     zIndex: 10000,
     width: width/6,
     height: height/10,
-    top: height-370,
+    top: height-355,
     right:width-80,
     marginTop: 290,
-    left:40,
+    left:35,
   },
 
   ButtonGoBack: {
