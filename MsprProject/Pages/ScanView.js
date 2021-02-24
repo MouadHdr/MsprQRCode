@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ButtonGoBack from '../components/ButtonGoBack'
-import ButtonGoBack2 from '../components/ButtonGoBack2'
 import { Image, Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import { Dimensions } from "react-native";
 
+import ButtonGoBack from '../components/ButtonGoBack'
 
 const { width, height } = Dimensions.get("window");
 
@@ -37,29 +36,34 @@ export default function ScanView() {
     <View style={ { flex: 1, flexDirection: "column", justifyContent: "flex-end" } }>
 
         {/* LOGO GOSTYLE */}
+    <View style={styles.containerButtonGoBack} > 
+        <View style={styles.ButtonGoBack}>
+            <ButtonGoBack />
+        </View>
+    </View>
     <View style={styles.containerContouring}>
       <Image style={styles.contouring} source={require("../assets/contouring.png")} />
     </View>
-      <BarCodeScanner onBarCodeScanned={ scanned ? undefined : handleBarCodeScanned } style={[ StyleSheet.absoluteFillObject, styles.container] }>
+    <BarCodeScanner onBarCodeScanned={ scanned ? undefined : handleBarCodeScanned } style={[ StyleSheet.absoluteFillObject, styles.container] }>
       <View style={styles.layerTop} />
+
       <View style={styles.layerCenter}>
-          <View style={styles.layerLeft} />
-          <View style={styles.focused} />
-          <View style={styles.layerRight} />
-          <View style={styles.containerButtonGoBack} > 
-            <View style={styles.ButtonGoBack}>
-              <ButtonGoBack2 />
-            </View>
+        <View style={styles.layerLeft} />
+        <View style={styles.focused} />
+        <View style={styles.layerRight} />
+        { scanned && (
+          <View style={ styles.containerDescription }>
+              <Text style={ styles.descriptionScanned }>Appuyez sur le bouton pour Scanner à nouveau</Text>
           </View>
-          { scanned && (
-              <View style={ styles.containerDescription }>
-                  <Text style={ styles.descriptionScanned }>Appuyez sur le bouton pour Scanner à nouveau</Text>
-              </View>
-              )
-          }
-        </View>  
-        <View style={styles.layerBottom} />
-      </BarCodeScanner>
+          )
+        }
+      </View>  
+
+      <View style={styles.layerBottom} />
+    </BarCodeScanner>
+
+      {/* When the Qr is scanned, Display of the buttonScan to try again a new Scan */}
+
       { scanned && (
         <View style={ styles.containerButton }>
           <TouchableOpacity onPress={ () => setScanned(false) }>
@@ -69,7 +73,6 @@ export default function ScanView() {
               </View>
             </View>
           </TouchableOpacity>
-          
         </View>
       )}
     </View>
@@ -98,10 +101,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     
-    zIndex: 0,
+    zIndex: 10,
     width: width,
     height: height,
-    top: 30,
+    top: 25,
     position: 'absolute',
     
   },
@@ -126,7 +129,7 @@ const styles = StyleSheet.create({
   },
   layerTop: {
     flex: 2,
-    backgroundColor: opacity
+    backgroundColor: "#fff"
   },
   layerCenter: {
     flex: 1,
@@ -145,7 +148,7 @@ const styles = StyleSheet.create({
   },
   layerBottom: {
     flex: 2,
-    backgroundColor: "#444"
+    backgroundColor: opacity
   },
   // borderVector: {
   //   flex: 3,
@@ -202,20 +205,20 @@ const styles = StyleSheet.create({
 
   containerButtonGoBack: {
     position: 'absolute',
-    zIndex: 550,
+    zIndex: 10000,
     width: width/6,
     height: height/10,
     top: height-370,
     right:width-80,
-    borderWidth:5,
-    borderColor:"#d4d4",
+    marginTop: 290,
+    left:40,
   },
 
   ButtonGoBack: {
-    zIndex: 300,
+    zIndex: 10000,
     width: width,
     height: height,
-
+    
   },
 
   containerDescription: {
