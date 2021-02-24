@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
+import ButtonGoBack from '../components/ButtonGoBack'
+import ButtonGoBack2 from '../components/ButtonGoBack2'
 import { Image, Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import { Dimensions } from "react-native";
 
-import ButtonGoBack from '../components/ButtonGoBack'
 
-const { width } = Dimensions.get("window");
-const qrSize = width * 0.7;
+const { width, height } = Dimensions.get("window");
 
 export default function ScanView() {
 /////Code for the Permissions to enable the Camera !!
@@ -37,39 +37,39 @@ export default function ScanView() {
     <View style={ { flex: 1, flexDirection: "column", justifyContent: "flex-end" } }>
 
         {/* LOGO GOSTYLE */}
-      <View style={ styles.containerLogoGoStyle } className="container-logoGoStyle">
-          <Image style={ styles.logoGoStyle } source={ require("../assets/logo_gostyle.png") }/>
-      </View>
-
+    <View style={styles.containerContouring}>
+      <Image style={styles.contouring} source={require("../assets/contouring.png")} />
+    </View>
       <BarCodeScanner onBarCodeScanned={ scanned ? undefined : handleBarCodeScanned } style={[ StyleSheet.absoluteFillObject, styles.container] }>
-        <Image style={ styles.imgRadius } source={ require("../assets/imgScanner2.png") }/>
-        <View style={ styles.borderVector }></View>
-        <View style={ styles.layerTop } />
-        <View style={ styles.layerCenter }>
-        <ButtonGoBack />
-
-        { scanned && (
-            <View style={ styles.containerDescription }>
-                <Text style={ styles.descriptionScanned }>Appuyez sur le bouton pour Scanner à nouveau</Text>
+      <View style={styles.layerTop} />
+      <View style={styles.layerCenter}>
+          <View style={styles.layerLeft} />
+          <View style={styles.focused} />
+          <View style={styles.layerRight} />
+          <View style={styles.containerButtonGoBack} > 
+            <View style={styles.ButtonGoBack}>
+              <ButtonGoBack2 />
             </View>
-            )
-         }
-          <View style={ styles.layerLeft } />
-          <View style={ styles.focused } />
-          <View style={ styles.layerRight } />
-        </View>
-        <View style={ styles.layerBottom } />
+          </View>
+          { scanned && (
+              <View style={ styles.containerDescription }>
+                  <Text style={ styles.descriptionScanned }>Appuyez sur le bouton pour Scanner à nouveau</Text>
+              </View>
+              )
+          }
+        </View>  
+        <View style={styles.layerBottom} />
       </BarCodeScanner>
       { scanned && (
         <View style={ styles.containerButton }>
           <TouchableOpacity onPress={ () => setScanned(false) }>
             <View style={ styles.button }>
-              <View style={ styles.containerImg }>
+              <View style={ styles.containerImgButton }>
                 <Image style={ styles.imgButton } source={ require("../assets/icon_play_scan.png") }/>
               </View>
             </View>
           </TouchableOpacity>
-          <ButtonGoBack />
+          
         </View>
       )}
     </View>
@@ -86,8 +86,28 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 
+  containerContouring: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+  },
+
+  contouring: {
+    flex:1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+    zIndex: 0,
+    width: width,
+    height: height,
+    top: 30,
+    position: 'absolute',
+    
+  },
+
   containerLogoGoStyle: {
-    zIndex: 2,
+    zIndex: 11,
     position: 'absolute',
     alignItems: "center",
     marginHorizontal:"40%",
@@ -105,54 +125,62 @@ const styles = StyleSheet.create({
     width: "91%",
   },
   layerTop: {
-    flex: 0.5,
-    backgroundColor: "#fff",
+    flex: 2,
+    backgroundColor: opacity
   },
   layerCenter: {
-    flex: 3,
-    flexDirection: "row",
+    flex: 1,
+    flexDirection: 'row'
   },
   layerLeft: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: opacity
   },
   focused: {
-    flex: 10,
+    flex: 10
   },
   layerRight: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: opacity
   },
   layerBottom: {
-    flex: 0.5,
-    backgroundColor: "#fff",
+    flex: 2,
+    backgroundColor: "#444"
   },
-
-  borderVector: {
-    flex: 3,
-    position: "absolute",
-    width: "87%",
-    height: "72%",
-    borderWidth: 15,
-    borderColor: "#fff",
-    borderRadius: 25,
-  },
+  // borderVector: {
+  //   flex: 3,
+  //   position: "absolute",
+  //   width: "87%",
+  //   height: "72%",
+  //   borderWidth: 15,
+  //   borderColor: "#fff",
+  //   borderRadius: 25,
+  // },
 
   containerButton: {
+    zIndex: 1000,
     alignItems: "center",
     justifyContent: "center",
+    position: 'absolute',
+    left:"42%",
+    right: "40%",
+    top: "89%",
   },
 
   button: {
+    zIndex: 9999,
+    zIndex: 30,
     borderRadius: 60,
     height: 86,
     width: 87,
+    bottom: "20%",
     marginBottom: 15,
     backgroundColor: "#591259",
     justifyContent: "center",
     position: "relative",
   },
-  containerImg: {
+  containerImgButton: {
+    zIndex: 30,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "white",
@@ -166,12 +194,32 @@ const styles = StyleSheet.create({
     right: 5,
   },
   imgButton: {
+    zIndex: 30,
     width: 58,
     height: 59,
     position: "absolute",
   },
 
+  containerButtonGoBack: {
+    position: 'absolute',
+    zIndex: 550,
+    width: width/6,
+    height: height/10,
+    top: height-370,
+    right:width-80,
+    borderWidth:5,
+    borderColor:"#d4d4",
+  },
+
+  ButtonGoBack: {
+    zIndex: 300,
+    width: width,
+    height: height,
+
+  },
+
   containerDescription: {
+    flex: 1,
     position: 'absolute',
     justifyContent: 'center',
     alignItems: 'center',
