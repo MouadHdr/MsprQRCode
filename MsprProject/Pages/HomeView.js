@@ -5,6 +5,7 @@ import ButtonScan from "../Components/ButtonScan";
 import ButtonCurrentPromo from "../Components/ButtonCurrentPromo";
 
 export default function HomeView() {
+  
   return (
     <View style={styles.wrapper} className="wrapper">
       <View className="container">
@@ -34,9 +35,11 @@ export default function HomeView() {
 }
 
 const styles = StyleSheet.create({
+  
   wrapper: {
     bottom: 55,
   },
+
   containerLogoGoStyle: {
     alignItems: "center",
     top: 77,

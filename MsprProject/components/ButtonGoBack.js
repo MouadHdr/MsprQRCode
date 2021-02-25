@@ -3,21 +3,22 @@ import { Image,StyleSheet,TouchableOpacity,View, Dimensions } from "react-native
 import { useNavigation } from '@react-navigation/native';
 
 export default function ButtonGoBack() {
+
   const navigation = useNavigation();
   const goBack = () => navigation.goBack();
 
   return (
     <View style={styles.wrapperGoBack} >
-    <TouchableOpacity style={styles.containerButtonBack} onPress={goBack}>
-      <View style={styles.buttonBack}>
+      <TouchableOpacity style={styles.containerButtonBack} onPress={goBack}>
+        <View style={styles.buttonBack}>
           <Image source={require("../assets/goBack.png")}/>
-      </View>
-    </TouchableOpacity>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
-const {width, height} = Dimensions.get("window")
 
+const {width, height} = Dimensions.get("window")
 const styles = StyleSheet.create({
 
   wrapperGoBack:{

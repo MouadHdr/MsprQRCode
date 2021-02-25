@@ -7,9 +7,10 @@ import ButtonGoBack from "../Components/ButtonGoBack";
 const { width, height } = Dimensions.get("window");
 
 export default function CurrentPromoView() {
+  
   return (
     <SafeAreaView>
-      <Text>PAGE PROMO !!</Text>
+      <Text>PAGE PROMO !</Text>
       <View style={styles.containerButtonGoBack}>
         <View style={styles.ButtonGoBack}>
           <ButtonGoBack />

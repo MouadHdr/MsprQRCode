@@ -1,5 +1,5 @@
 import React from "react";
-import { Image,StyleSheet,TouchableOpacity,Text,View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, Text, View } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 export default function ButtonScan() {
@@ -23,6 +23,7 @@ export default function ButtonScan() {
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -38,6 +39,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     position: "relative",
   },
+
   buttonText: {
     color: "white",
     fontWeight: "bold",
@@ -46,6 +48,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     left: 14,
   },
+
   containerImg: {
     backgroundColor: "white",
     color: "#fff",
@@ -57,6 +60,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     right: 5,
   },
+
   imgButton: {
     width: 58,
     height: 59,
