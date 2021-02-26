@@ -1,0 +1,1 @@
+- Quand on clique sur un item celui ci nous renvoit la page web du produit en question
