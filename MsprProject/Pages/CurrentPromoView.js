@@ -1,18 +1,24 @@
 import React from "react";
 import { Text, SafeAreaView } from "react-native";
 
-import { firebase, firestore, storage } from "../FireBase/FireBase"
+import * as firebase from "firebase";
+import "firebase/firestore";
+import firebaseConfig from "../FireBase/FireBaseConfig";
 
 export default function CurrentPromoView() {
 
-  const getPromo = async () => 
-  { 
-    codePromoDoc = await firestore().collection("Promo").doc("CodePromo").get()
-  }
+  firebase.initializeApp(firebaseConfig);
+
+  const db = firebase.firestore();
+  db.collection("GoStyleMobileApp")
+    .doc("CodeReduction")
+    .set({
+      1: "MAMA"
+    });
 
   return (
     <SafeAreaView>
-      <Text>PAGE PROMOo oui {codePromoDoc} !! </Text>
+      <Text>PAGE PROMO oui!! </Text>
 
       
     </SafeAreaView>
