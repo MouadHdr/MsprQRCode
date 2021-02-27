@@ -7,18 +7,25 @@ import firebaseConfig from "../FireBase/FireBaseConfig";
 
 export default function CurrentPromoView() {
 
-  firebase.initializeApp(firebaseConfig);
+  //firebase.initializeApp(firebaseConfig);
 
-  const db = firebase.firestore();
-  db.collection("GoStyleMobileApp")
-    .doc("CodeReduction")
-    .set({
-      1: "MAMA"
-    });
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+  else {
+    firebase.app();
+  }
+
+  const DATA = "BABINKS"; //renvoit moi la valeur du champ numero1 du doc BABINKS
+
+  const database = firebase.firestore();
+  database.collection("GoStyleMobileApp")
+    .doc("BABINKS")
+    .set({ clef: "ALI", clef: "LOU", clef: "BABINKS", });
 
   return (
     <SafeAreaView>
-      <Text>PAGE PROMO oui!! </Text>
+      <Text>PAGE PROM oui!! </Text>
 
       
     </SafeAreaView>
