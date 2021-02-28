@@ -16,16 +16,22 @@ export default function CurrentPromoView() {
     firebase.app();
   }
 
-  const DATA = "BABINKS"; //renvoit moi la valeur du champ numero1 du doc BABINKS
+  const DATA = ["OUI", "NON"]; //renvoit moi la valeur du champ numero1 du doc BABINKS
 
+  //WRITE
   const database = firebase.firestore();
   database.collection("GoStyleMobileApp")
-    .doc("BABINKS")
-    .set({ clef: "ALI", clef: "LOU", clef: "BABINKS", });
+          .doc("BABINKS")
+          .set({ clef: "ALI" });
+
+  //READ
+  const MonDocs = database.collection("GoStyleMobileApp").doc("BABINKS").get();
+
+  const listItems = MonDocs.map((MonDoc) => MonDoc);
 
   return (
     <SafeAreaView>
-      <Text>PAGE PROM oui!! </Text>
+      <Text>PAGE PROMO oui!! {MonDoc}</Text>
 
       
     </SafeAreaView>
