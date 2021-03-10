@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text, SafeAreaView, StyleSheet, ScrollView, View } from "react-native";
+import { Image } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { Dimensions } from "react-native";
 import { ListItem } from 'react-native-elements';
 
@@ -32,17 +34,20 @@ export default function CurrentPromoView() {
   }, []);
 
   return (
-    <View >
-      <Text style={{ position: 'absolute', width:"100%",textAlign:"center", marginTop: 50}}>PAGE PROMO !!</Text>
-      <ScrollView style={{marginTop:80, marginBottom:90}}>
+    <View style={{backgroundColor: '#fff',}} >
+      <Image style={{position: 'absolute', width:70,height:120, left: "41%"}} source={require("../assets/logo_gostyle.png")} />
+      <ScrollView style={{marginTop:90, marginBottom:90}}>
         {
-            inPromo.map(inpromo => {
+            inPromo.map(inpromo => { 
               return (
-                  <ListItem style={{ maxWidth:"90%", marginLeft:15 ,borderWidth:0.8, borderColor:"#591259"}} key={inpromo.id}>
-                      <ListItem.Content >
-                        <ListItem.Title>{inpromo.name} </ListItem.Title>
-                        <ListItem.Subtitle>{inpromo.newPrice + '€' + ' ' + '-' + ' ' + inpromo.oldPrice + '€'}</ListItem.Subtitle>
-                      </ListItem.Content>
+                  <ListItem style={{ marginLeft: 17,display: 'flex', maxWidth:"90%",  borderColor:"#591259"}} key={inpromo.id}>
+                    <TouchableOpacity style={{borderWidth:2, borderColor: "#591259", borderRadius:60, width: "100%", height: 90,}}>  
+                        <ListItem.Content style={{ alignItems: 'center', textAlign: 'center',  }} >
+                          <ListItem.Title style={{ textAlign: 'center', width: "95%"}}>{inpromo.name} </ListItem.Title>
+                          <ListItem.Subtitle style={{fontWeight: "bold", color:"#591259"}}>{inpromo.newPrice + '€'  }</ListItem.Subtitle>
+                          <ListItem.Subtitle style={{textDecorationLine:"line-through", textShadowColor:"#591259", fontSize:12}}>{ inpromo.oldPrice + '€'}</ListItem.Subtitle>
+                        </ListItem.Content>
+                    </TouchableOpacity>
                   </ListItem>
               )
             })
@@ -53,6 +58,7 @@ export default function CurrentPromoView() {
           <ButtonGoBack />
         </View>
       </View>
+      <Image source={require("../assets/bonsPlans.png")} style={{position: 'absolute', bottom:20, left: 130 , width:120,height: 80}} />
     </View>
   );
 }

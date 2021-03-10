@@ -5,7 +5,6 @@ import Navigation from "./routes/Navigation";
 export default function App() {
   return (
       <Navigation style={styles.container}/>
-      
   );
 }
 const styles = StyleSheet.create({
