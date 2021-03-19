@@ -20,9 +20,9 @@ export default function CodePromoView({ route }, props) {
           const codePromos = [];
   
           querySnapshot.docs.forEach((doc) => {
-            const { codeN1 } = doc.data()
+            const { champData } = doc.data()
             codePromos.push({
-                codeN1
+                champData
             })
           });
   
@@ -36,11 +36,18 @@ export default function CodePromoView({ route }, props) {
         <View style={styles.container} >
             {
               codePromos.map(codepromo => {
-                return (
-                   <View>
-                      <Text> {codepromo.codeN1} </Text>
-                   </View>
-                )
+                if(codepromo.champData == null) {
+                  return (
+                    <Text> AUCUN CODE PROMO EN BASE </Text>
+                  )
+                }
+                else { 
+                  return (
+                    <View>
+                        <Text> {codepromo.champData} </Text>
+                    </View>
+                  )
+                }
               })
             }
             <ButtonGoBack/>
