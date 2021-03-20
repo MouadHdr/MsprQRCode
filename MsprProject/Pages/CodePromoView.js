@@ -2,57 +2,54 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
 import ButtonGoBack from '../Components/ButtonGoBack'
-import firebaseConfig from '../config/FirebaseConfig';
+import firebaseConfig from '../config/FirebaseConfig'
 
-export default function CodePromoView({ route }, props) {
+export default function CodePromoView({ route }) {
 
-    const [codePromos, setcodePromos] = useState([])
+  const { dataQrCode } = route.params
 
-    const { dataQrCode } = route.params
-    var FinalData = JSON.stringify(dataQrCode);
-    const size = FinalData.length;
-     
-    const { codeId } = props;
+  var FinalData = JSON.stringify(dataQrCode);
+  var CodePromoFinal;
 
-    useEffect(() => {
-      firebaseConfig.db.collection('CollectionCodePromo').onSnapshot(querySnapshot => {
-  
-          const codePromos = [];
-  
-          querySnapshot.docs.forEach((doc) => {
-            const { champData } = doc.data()
-            codePromos.push({
-                champData
-            })
-          });
-  
-          setcodePromos(codePromos)
+  const [codePromos, setcodePromos] = useState([])
+
+  useEffect(() => {
+    firebaseConfig.db.collection('CollectionCodePromo').onSnapshot(querySnapshot => {
+      
+      const codePromos = [];
+
+      querySnapshot.docs.forEach((doc) => {
+        const { ChampCodePromo } = doc.data()
+        codePromos.push({
+          id: doc.id,
+          ChampCodePromo
+        })
       });
-    }, []);
+  
+      setcodePromos(codePromos)
+    });
+    },[]
+  );
 
-    
-    
-    return (
-        <View style={styles.container} >
-            {
-              codePromos.map(codepromo => {
-                if(codepromo.champData == null) {
-                  return (
-                    <Text> AUCUN CODE PROMO EN BASE </Text>
-                  )
-                }
-                else { 
-                  return (
-                    <View>
-                        <Text> {codepromo.champData} </Text>
-                    </View>
-                  )
-                }
-              })
-            }
-            <ButtonGoBack/>
-        </View>
-    )
+  return (
+    <View style={styles.container} >
+      {
+        codePromos.map(codepromo => {
+          if(codepromo.id == FinalData.replace(/"/g, '')) {
+            CodePromoFinal = codepromo.ChampCodePromo;
+            return (
+              <View>
+                <Text> VALEUR CHAMP = {CodePromoFinal} </Text>
+                <Text> DOCUMENT = {codepromo.id} </Text> {/* balise <Texte> inutile */}
+              </View>
+            )
+          }
+        })             
+      }
+
+      <ButtonGoBack/>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({

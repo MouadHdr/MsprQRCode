@@ -30,7 +30,7 @@ export default function ScanView() {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     //"data" will be used in our algo
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    alert(`TYPE : ${type}  DATA : ${data}`);
     myData = data;
     goToCodePromoView();
   };
