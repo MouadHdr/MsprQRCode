@@ -7,7 +7,7 @@ const firebaseConfig = {
   projectId: "msprproject",
   storageBucket: "msprproject.appspot.com",
   messagingSenderId: "890103265113",
-  appId: "1:890103265113:web:b6588de6fd03bce9c77e48"
+  appId: "1:890103265113:web:63bf3c429516676ac77e48"
 };
 
   // Initialize Firebase
@@ -15,3 +15,4 @@ const firebaseConfig = {
   const db = firebase.firestore();
 
 export default { firebase, db };
+

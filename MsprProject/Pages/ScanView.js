@@ -5,7 +5,6 @@ import { Dimensions } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 import ButtonGoBack from '../Components/ButtonGoBack'
-import CodePromoView from './CodePromoView';
 
 const { width, height } = Dimensions.get("window");
 
@@ -30,7 +29,7 @@ export default function ScanView() {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     //"data" will be used in our algo
-    alert(`TYPE : ${type}  DATA : ${data}`);
+    // alert(`TYPE : ${type}  DATA : ${data}`);
     myData = data;
     goToCodePromoView();
   };
