@@ -40,13 +40,14 @@ export default function CodePromoView({ route }) {
 
   const copyToClipboard = () => {
     Clipboard.setString(CodePromoFinal);
+    alert("Code Copié")
   };
   
   return (
     <View style={styles.container} >
       <Image style={{position: 'absolute', width:200,height:250, left: width/4.5, top: 20,}} source={require("../assets/logo_gostyle.png")} />
-      <View style={{ paddingTop: 50, paddingBottom: 80, }}>
-        <View style={{width: width-20, backgroundColor: '#591259', borderRadius: 25, borderBottomRightRadius: 0, borderTopLeftRadius: 0, marginBottom: 90,}}>
+      <View style={{ paddingTop: 150, paddingBottom: 80, }}>
+        <View style={{width: width-20, backgroundColor: '#591259', borderRadius: 25, borderBottomRightRadius: 0, borderTopLeftRadius: 0, marginBottom: 70,}}>
             <Text style={{textTransform: "uppercase", marginBottom: 0, fontSize:20, textAlign: 'center', color:"#fff"}}>Votre code de réduction : </Text>
         </View>
         {
@@ -57,12 +58,11 @@ export default function CodePromoView({ route }) {
                 <View style={{alignItems: 'center',}}>
                   <View style={{ alignItems: 'center', borderColor:"#591259", borderWidth: 3, height: 100, width: width-50, borderRadius: 65,}}>
                     <View style={{borderWidth: 2, borderColor: "#fff", width: width-80, backgroundColor: '#fff', padding:20, borderRadius:65}}>
-                      <Text key={CodePromoFinal} style={{textAlign: 'center', color:"#591259", fontSize:16, marginRight: 20, marginTop: 10,}}> {CodePromoFinal} </Text>
+                      <Text key={CodePromoFinal} style={{textAlign: 'center', color:"#591259", fontSize:16, marginRight: 20, marginTop: 15,}}> {CodePromoFinal} </Text>
                       
-                      <View style={{ position: 'absolute', right: -8, top: 5,}}>
-                        <TouchableOpacity onPress={ copyToClipboard } style={{ borderWidth:2, padding:9, borderRadius: 60,}}>
+                      <View style={{ position: 'absolute', right: 0, top: 25,}}>
+                        <TouchableOpacity onPress={ copyToClipboard }>
                           <Image style={{ alignItems: 'center', justifyContent: 'center',}} source={require("../assets/copy_paste_icon.png")} />
-                          <Text style={{fontSize: 10, textAlign: 'center', fontWeight: "bold",}}>Copier</Text>
                         </TouchableOpacity>
                       </View>
 
