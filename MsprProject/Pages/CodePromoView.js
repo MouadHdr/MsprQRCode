@@ -57,7 +57,7 @@ export default function CodePromoView({ route }) {
                 <View style={{alignItems: 'center',}}>
                   <View style={{ alignItems: 'center', borderColor:"#591259", borderWidth: 3, height: 100, width: width-50, borderRadius: 65,}}>
                     <View style={{borderWidth: 2, borderColor: "#fff", width: width-80, backgroundColor: '#fff', padding:20, borderRadius:65}}>
-                      <Text key="uniqueId" style={{textAlign: 'center', color:"#591259", fontSize:16, marginRight: 20, marginTop: 10,}}> {CodePromoFinal} </Text>
+                      <Text key={CodePromoFinal} style={{textAlign: 'center', color:"#591259", fontSize:16, marginRight: 20, marginTop: 10,}}> {CodePromoFinal} </Text>
                       
                       <View style={{ position: 'absolute', right: -8, top: 5,}}>
                         <TouchableOpacity onPress={ copyToClipboard } style={{ borderWidth:2, padding:9, borderRadius: 60,}}>
