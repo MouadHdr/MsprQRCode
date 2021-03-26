@@ -2,14 +2,20 @@ import React, { useState, useEffect } from "react";
 import { Image, Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import { Dimensions } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 import ButtonGoBack from '../Components/ButtonGoBack'
 
 const { width, height } = Dimensions.get("window");
 
 export default function ScanView() {
+  
+  const navigation = useNavigation();
+  const goToCodePromoView = () => navigation.navigate("CodePromoView", {dataQrCode: myData});
+  var myData = null;
 
   //Code to enable the use of the camera
+  const [dataQrCode, setDataQrCode] = useState(myData)
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
 
@@ -23,7 +29,9 @@ export default function ScanView() {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     //"data" will be used in our algo
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    // alert(`TYPE : ${type}  DATA : ${data}`);
+    myData = data;
+    goToCodePromoView();
   };
 
   if (hasPermission === null) {

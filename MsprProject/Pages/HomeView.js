@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   ButtonsInput: {
     display: "flex",
     alignItems: "center",
-    top: 30,
+    top: 70,
   },
 
   buttonItem2: {
