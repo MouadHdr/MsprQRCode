@@ -1,0 +1,41 @@
+évaluées :
+dev + conception
++ tests unitaires = scan de QRCode, appel de la bdd, recuperation et affichage de code de reduction
+
+- client?
+nom : GoStyle
+domaine : boutique vetement streetwear
+
+- besoin?
++ de client -> app mobile
+
+- but?
+informe le client de potentiel promotions sur des produits et beneficie de coupon de reduction
+(le tout pour fideliser le client via des promotions de ventes)
+
+- finalitée
+couponing par QRCode
+-> (Recupérer les données du client)
+-> (Adapation des produits proposés selon les derniers QRCode scannés)
+-> QRCode trouvé sur les affiches ou les produits en magasin
+
+- attendue de l'apprenant?
+
+Affichage d'une listes des promotions actuelles 
+Possibilité de scan les QRCode -> pour un code de reduction
+
+0) git et github
+
+1) diagramme de séquence
+= react native + firebase
+
+2) les IHM
+ 
+3) diagramme de navigation
+
+4) code
+
+
+
+
+
