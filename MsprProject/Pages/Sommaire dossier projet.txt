@@ -1,0 +1,74 @@
+1. Page de garde
+2. Sommaire
+3. Compétence couverte par ce projet
+4. Résumé en anglais du projet
+
+5. Gestion de projet
+    5.1 Méthodologie de gestion de projet
+    5.2 Planning et suivi
+    5.3 Environnement humain et technique 
+    5.4 Objectif qualité
+
+6. Spécifications fonctionnelle
+    6.1 Interfaces homme-machine
+    6.2 micro-service n°1 (Explication fonctionnelle)
+    6.3 micro-service n°2 (Explication fonctionnelle)
+
+7. Spécifications technique
+    7.1 Environnement de dev (outils/techno/langage)
+    7.2 Gestion des données (outils/techno/langage)
+    7.3 Principe de conception
+    7.4 Sécurisation des données
+    7.5 Hebergement de l'application
+    7.6 Charte graphique
+
+8. Realisation et implémentation
+    8.1 Rappel de la méthodologie de travail (reunion, versionning, principe de conception, pairing)
+    8.2 (Justification) Choix technologique
+    8.3 Résumé descriptif des services presenté
+
+    8.3 Description détaillé du micro-service n°1 (!)
+        8.3.1 Architecture (projet par couche) (!)
+        8.3.2 Code (!)
+        8.3.3 Test (!)
+        8.3.4 Description et conception de la base de données  (!!)
+        8.3.5 Implémentation de la bdd (!!!)
+        8.3.6 Déploiment du ce micro-service (!)
+        8.3.7 Demo de ce micro-service
+
+    8.4 Description détaillé du micro-service n°2 (!)
+        8.4.1 Architecture (projet par couche) (!)
+        8.4.2 Code (!)
+        8.4.3 Test (!)
+        8.4.4 Description et conception de la base de données (!!)
+        8.4.5 Implémentation de la bdd (!!!)
+        8.4.6 Déploiment du ce micro-service (!)
+        8.4.7 Demo de ce micro-service
+
+9. Veille effectuée sur les vurlnérabilités de sécurité
+    9.1 Detection des vulnérabilités
+    9.2 Liquibase et iso 27001
+    9.3 Les vulnérabilités en résumé
+
+10. Situation de Travail
+11. Conclusion
+
+--------------------------------------------------------------------------------------------------------------------
+
+- Développer des composants d’accès aux données : 8.3.5 et 8.4.5
+- Développer la partie back-end d’une interface utilisateur web : 8.3 et 8.4
+- Concevoir une base de données : 8.3.4 et 8.4.4
+- Mettre en place une base de données : 8.3.4 et 8.4.4
+- Développer des composants dans le langage d’une base de données : 8.3.5 et 8.4.5
+- Collaborer à la gestion d’un projet informatique et à l’organisation de l’environnement de développement : 5
+- Développer des composants métier : 8.3.2 et 8.4.2
+- Construire une application organisée en couches : 8.3.1 et 8.4.1
+- Préparer et exécuter les plans de tests d’une application : 8.3.3 et 8.4.3 
+- Préparer et exécuter le déploiement d’une application : 8.3.6 et 8.4.6
+
+
+
+
+
+    
+
